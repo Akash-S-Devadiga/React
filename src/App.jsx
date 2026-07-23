@@ -13,7 +13,10 @@ function App() {
   return <><h1>Hello World</h1>
   <button onClick={()=>setCounter(prev=>prev+1)}>Click Here</button>
   <h1>{counter}</h1>
+  {counter>5?<h1>count is greater than 5</h1>:<h1>count is lesser than 5</h1>}
 
+  {counter&&<h1>count exists</h1>}
+  
   </>
 }
 
