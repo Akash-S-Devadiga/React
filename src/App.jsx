@@ -16,7 +16,8 @@ function App() {
   {counter>5?<h1>count is greater than 5</h1>:<h1>count is lesser than 5</h1>}
 
   {counter&&<h1>count exists</h1>}
-  
+
+  <AA name="AKASH"/>
   </>
 }
 

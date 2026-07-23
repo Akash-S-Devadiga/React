@@ -1,9 +1,9 @@
 import React from 'react'
 
-function AA() {
+function AA(props) {
   return (
     <div>
-      helloooo buddies i am in AA.jsx
+      helloooo buddies i am {props.name}
     </div>
   )
 }
