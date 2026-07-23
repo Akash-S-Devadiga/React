@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import AA from  "./components/AA"
 
-
+const fruits = ["Apple", "Mango", "Orange"];
 
 function App() {
 
@@ -18,6 +18,11 @@ function App() {
   {counter&&<h1>count exists</h1>}
 
   <AA name="AKASH"/>
+
+     {fruits.map((fruit,key) => (
+        <h2>{key}:{fruit}</h2>
+      ))}
+  
   </>
 }
 
