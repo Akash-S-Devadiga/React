@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState,useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -8,15 +8,26 @@ const fruits = ["Apple", "Mango", "Orange"];
 
 
 function App() {
+
 function submitHandler(e){
   e.preventDefault();
   console.log("form submitted "+form.name)
 }
+
+
   const[counter,setCounter]=useState(0)
+
+
   const[form,setform]=useState({
     name:"",
     place:""
   })
+
+   useEffect(() => {
+
+      console.log("Counter Added")
+
+      },[counter,form.name])
 
   return <><h1>Hello World</h1>
   <button onClick={()=>setCounter(prev=>prev+1)}>Click Here</button>
@@ -30,6 +41,8 @@ function submitHandler(e){
      {fruits.map((fruit,index) => (
         <h2 key={index}>{index}:{fruit}</h2>
       ))}
+
+     
 
 
      {/* form handling  */}
