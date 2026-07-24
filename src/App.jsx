@@ -6,9 +6,17 @@ import AA from  "./components/AA"
 
 const fruits = ["Apple", "Mango", "Orange"];
 
-function App() {
 
+function App() {
+function submitHandler(e){
+  e.preventDefault();
+  console.log("form submitted "+form.name)
+}
   const[counter,setCounter]=useState(0)
+  const[form,setform]=useState({
+    name:"",
+    place:""
+  })
 
   return <><h1>Hello World</h1>
   <button onClick={()=>setCounter(prev=>prev+1)}>Click Here</button>
@@ -19,10 +27,36 @@ function App() {
 
   <AA name="AKASH"/>
 
-     {fruits.map((fruit,key) => (
-        <h2>{key}:{fruit}</h2>
+     {fruits.map((fruit,index) => (
+        <h2 key={index}>{index}:{fruit}</h2>
       ))}
+
+
+     {/* form handling  */}
   
+      <div>
+
+        <input type="text" 
+        value={form.name}
+        onChange={(e)=>{setform({
+          ...form,
+          name:e.target.value
+        })}}/>
+      </div>
+      <form onSubmit={submitHandler}>
+      <div>
+
+       <input type="text" 
+        value={form.place}
+        onChange={(e)=>{setform({
+          ...form,
+          place:e.target.value
+        })}}/>
+      </div>
+
+      <button>Submit</button>
+      </form>
+      <h2>Name: {form.name}</h2>:<h2>Place: {form.place}</h2>
   </>
 }
 
