@@ -23,12 +23,15 @@ function submitHandler(e){
     place:""
   })
 
-   useEffect(() => {
+ useEffect(() => {
 
-      console.log("Counter Added")
+    console.log("Effect Running");
 
-      },[counter,form.name])
+    return () => {
+      console.log("Cleaning Previous Effect");
+    };
 
+  }, [counter]);
   return <><h1>Hello World</h1>
   <button onClick={()=>setCounter(prev=>prev+1)}>Click Here</button>
   <h1>{counter}</h1>
